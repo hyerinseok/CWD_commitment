@@ -120,5 +120,7 @@ function init(){
     ul.style.width = parseInt(imageWidth * imageNumber) + ‘px’;
     slider(ul);
 }
+var computedStyle = document.defaultView.getComputedStyle(liItems[i].childNodes[0], null);
+imageWidth = computedStyle.width;
 </script>
 </html>
