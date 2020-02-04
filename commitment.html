@@ -108,20 +108,22 @@ p{
 var ul;
 var liItems; 
 var imageWidth;
-var imageNumber;
+var imagecount;
 
 function init(){
 
     ul = document.getElementById(‘image_slider’);
     liItems = ul.children;
-    imageNumber = liItems.length;
+    imagecount = liItems.length;
     imageWidth = liItems[0].children[0].offsetWidth;
     // set ul’s width as the total width of all images in image slider.
-    ul.style.width = parseInt(imageWidth * imageNumber) + ‘px’;
-    slider(ul);
+    ul.style.width = parseInt(imageWidth * imagecount) + ‘px’;
+    //slider(ul);
 }
+
 var computedStyle = document.defaultView.getComputedStyle(liItems[i].childNodes[0], null);
 imageWidth = computedStyle.width;
+
 function slider(ul){ 
     animate({
         delay:17,
@@ -133,12 +135,12 @@ function slider(ul){
         callback:function(){
             currentImage++;
         // if it doesn’t slied to the last image, keep sliding
-            if(currentImage < imageNumber-1){
+            if(currentImage < imagecount-1){
                 slider(ul);
         }
        // if current image it’s the last one, it slides back to the first one
             else{
-                var leftPosition = (imageNumber - 1) * imageWidth;
+                var leftPosition = (imagecount - 1) * imageWidth;
                // after 2 seconds, call the goBack function to slide to the first image 
                 setTimeout(function(){goBack(leftPosition)},2000); 
                 setTimeout(function(){slider(ul)}, 4000);
