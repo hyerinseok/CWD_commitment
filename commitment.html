@@ -34,6 +34,7 @@ p{
 #image_slider{
     position: relative;
     padding:0;
+    margin:0;
 }
 #image_slider li{
     max-width: 100%;
@@ -118,9 +119,9 @@ function init(){
     imagecount = liItems.length;
     imageWidth = liItems[0].children[0].offsetWidth;
     // set ul’s width as the total width of all images in image slider.
-    ul.style.width = parseInt(imageWidth * imagecount) + 'px';
+    //ul.style.width = parseInt(imageWidth * imagecount) + 'px';
     container = ul.parentNode.parentNode;
-    container.style.height = liItems[0].children[0].offsetHeight + 'px';
+    container.style.height = parseInt(liItems[0].children[0].offsetHeight + 40) + 'px';
     //slider(ul);
 }
 
