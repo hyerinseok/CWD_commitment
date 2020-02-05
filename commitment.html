@@ -112,6 +112,7 @@ var container;
 var liItems; 
 var imageWidth;
 var imagecount;
+var currentImage;
 
 function init(){
     ul = document.getElementById('image_slider');
@@ -121,8 +122,8 @@ function init(){
     // set ul’s width as the total width of all images in image slider.
     //ul.style.width = parseInt(imageWidth * imagecount) + 'px';
     container = ul.parentNode.parentNode;
-    container.style.height = parseInt(liItems[0].children[0].offsetHeight + 40) + 'px';
-    //slider(ul);
+    container.style.height = parseFloat(liItems[0].children[0].offsetHeight + 40) + 'px';
+    slider(ul);
 }
 
 function slider(ul){ 
@@ -148,6 +149,23 @@ function slider(ul){
             }
         }
     });
+}
+//generic animate function
+function animate(opts){
+    var start = new Date;
+    var id = setInterval(function(){
+        var timePassed = new Date - start;
+        var progress = timePassed / opts.duration
+        if(progress > 1){
+            progress = 1;
+        }
+        var delta = opts.delta(progress);
+        opts.step(delta);
+        if (progress == 1){
+            clearInterval(id);
+           opts.callback();
+         }
+    }, opts.dalay || 17);
 }
 
 </script>
