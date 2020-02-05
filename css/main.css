@@ -1,5 +1,5 @@
 body{
-    cursor: url(../img/cupcakecursor.png), auto;
+    cursor: url(../img/cupcakecursor.png), url(../img/cupcake.cur), auto;
 	background-color: #add8e6;
 }
 h1{
