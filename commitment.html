@@ -104,7 +104,7 @@ p{
         </ul> 
     </div>
 </div>
-</body>
+
 <script type="text/javascript">
 var ul;
 var container;
@@ -113,6 +113,7 @@ var imageWidth;
 var imagecount;
 
 function init(){
+	alert("hi");
     ul = document.getElementById('image_slider');
     container = ul.parent.parent;
     liItems = ul.children;
@@ -121,7 +122,7 @@ function init(){
     // set ul’s width as the total width of all images in image slider.
     container.style.height = liItems[0].children[0].offsetHeight;
     ul.style.width = parseInt(imageWidth * imagecount) + ‘px’;
-    slider(ul);
+    //slider(ul);
 }
 
 var computedStyle = document.defaultView.getComputedStyle(liItems[i].childNodes[0], null);
@@ -151,6 +152,9 @@ function slider(ul){
         }
     });
 }
-window.onload = init;
+
+window.onload = init();
+
 </script>
+</body>
 </html>
