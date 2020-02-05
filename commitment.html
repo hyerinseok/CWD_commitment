@@ -45,7 +45,7 @@ p{
 }
 </style>
 </head>
-<body>
+<body onload="init()">
 <header><h1>My baking adventures.</h1></header>
 <p>So... I like baking <i> a lot. </i></p>
 <img src="img/baking.jpg" width="100%"/>
@@ -121,7 +121,7 @@ function init(){
     imageWidth = liItems[0].children[0].offsetWidth;
     // set ul’s width as the total width of all images in image slider.
     container.style.height = liItems[0].children[0].offsetHeight;
-    ul.style.width = parseInt(imageWidth * imagecount) + ‘px’;
+    ul.style.width = parseInt(imageWidth * imagecount) + 'px';
     //slider(ul);
 }
 
@@ -134,7 +134,7 @@ function slider(ul){
         duration: 3000,
         delta:function(p){return Math.max(0, -1 + 2 * p)},
         step:function(delta){
-            ul.style.left = ‘-’ + parseInt(currentImage * imageWidth + delta * imageWidth) + ‘px’;
+            ul.style.left = '-' + parseInt(currentImage * imageWidth + delta * imageWidth) + 'px';
     },
         callback:function(){
             currentImage++;
@@ -152,8 +152,6 @@ function slider(ul){
         }
     });
 }
-
-window.onload = init();
 
 </script>
 </body>
