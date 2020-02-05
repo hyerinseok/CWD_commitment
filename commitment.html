@@ -135,7 +135,7 @@ function init(){
 function slider(ul){ 
     animate({
         delay:17,
-        duration: 1000,
+        duration: 2000,
         delta:function(p){return Math.max(0, -1 + 2 * p)},
         step:function(delta){
             ul.style.left = '-' + parseInt(currentImage * imageWidth + delta * imageWidth) + 'px';
