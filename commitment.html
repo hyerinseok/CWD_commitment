@@ -135,7 +135,7 @@ function init(){
 function slider(ul){ 
     animate({
         delay:17,
-        duration: 3000,
+        duration: 1000,
         delta:function(p){return Math.max(0, -1 + 2 * p)},
         step:function(delta){
             ul.style.left = '-' + parseInt(currentImage * imageWidth + delta * imageWidth) + 'px';
@@ -145,13 +145,12 @@ function slider(ul){
         // if it doesn’t slied to the last image, keep sliding
             if(currentImage < imagecount-1){
                 slider(ul);
-        }
+	        }
        // if current image it’s the last one, it slides back to the first one
             else{
                 var leftPosition = 0;
                // after 2 seconds, call the goBack function to slide to the first image 
-                setTimeout(function(){goBack(leftPosition)}, 100); 
-                setTimeout(function(){slider(ul)}, 2000);
+                setTimeout(function(){goBack(leftPosition)}, 1000);
             }
         }
     });
@@ -168,6 +167,7 @@ function goBack(leftPosition){
             clearInterval(id);
         } 
     }, 17);
+    setTimeout(function(){slider(ul)}, 2000);
 }
 
 //generic animate function
@@ -185,9 +185,11 @@ function animate(opts){
             clearInterval(id);
            opts.callback();
          }
-    }, opts.dalay || 17);
+    }, opts.delay || 17);
 }
+
 window.onload = init;
+
 </script>
 </body>
 </html>
