@@ -113,20 +113,16 @@ var imageWidth;
 var imagecount;
 
 function init(){
-	alert("hi");
     ul = document.getElementById('image_slider');
-    container = ul.parent.parent;
     liItems = ul.children;
     imagecount = liItems.length;
     imageWidth = liItems[0].children[0].offsetWidth;
     // set ul’s width as the total width of all images in image slider.
-    container.style.height = liItems[0].children[0].offsetHeight;
     ul.style.width = parseInt(imageWidth * imagecount) + 'px';
+    container = ul.parentNode.parentNode;
+    container.style.height = liItems[0].children[0].offsetHeight + 'px';
     //slider(ul);
 }
-
-var computedStyle = document.defaultView.getComputedStyle(liItems[i].childNodes[0], null);
-imageWidth = computedStyle.width;
 
 function slider(ul){ 
     animate({
