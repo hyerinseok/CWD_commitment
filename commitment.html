@@ -112,7 +112,7 @@ var container;
 var liItems; 
 var imageWidth;
 var imagecount;
-var currentImage;
+var currentImage=0;
 
 function init(){
     ul = document.getElementById('image_slider');
@@ -150,6 +150,20 @@ function slider(ul){
         }
     });
 }
+
+function goBack(leftPosition){
+    currentImage = 0; 
+    var id = setInterval(function(){
+        if(leftPosition >= 0){
+            ul.style.left = '-' + parseInt(leftPosition) + 'px';
+            leftPosition -= imageWidth / 10;
+        }
+        else{
+            clearInterval(id);
+        } 
+    }, 17);
+}
+
 //generic animate function
 function animate(opts){
     var start = new Date;
