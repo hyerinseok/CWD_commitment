@@ -1,5 +1,7 @@
 # CWD_commitment
 commitment assignment for creative web dev
+
+# Main components
 commitment.html : main page
 /img/ : image dir
 /css/main.css : main css page
