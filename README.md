@@ -2,6 +2,8 @@
 commitment assignment for creative web dev
 commitment.html : main page
 /img/ : image dir
+/css/main.css : main css page
+/js/main.js : main js page
 
 I talk about my passion for baking
 
