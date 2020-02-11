@@ -1,6 +1,7 @@
 # CWD_commitment
 commitment assignment for creative web dev
-index.html : main page
+commitment.html : main page
+/img/ : image dir
 
 I talk about my passion for baking
 
