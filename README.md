@@ -2,6 +2,7 @@
 commitment assignment for creative web dev
 index.html : main page
 
+I talk about my passion for baking
                        * 
                                   * 
      *                                             * 
