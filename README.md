@@ -7,7 +7,7 @@ commitment.html : main page
 /css/main.css : main css page
 /js/main.js : main js page
 
-I talk about my passion for baking
+I talk about my passion for baking.
 
 	                       * 
 	                                  * 
@@ -56,3 +56,4 @@ I talk about my passion for baking
 	                           .,%%%%%%%,. 
 	                      ,%%%%%%%%%%%%%%%%%%%, 
 	          ---------------------------------------------
+Thanks for reading!
